@@ -28,7 +28,7 @@
         }
 
         .container {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 255, 255, 0.95);
             max-width: 600px;
             padding: 40px 30px;
             border-radius: 15px;
@@ -62,15 +62,49 @@
         }
 
         .destaque-tempo {
-            font-size: 1.3rem !important;
+            font-size: 1.25rem !important;
             color: var(--cor-primaria);
             font-weight: 600;
+        }
+
+        /* Caixa de Aviso Importante (Comanda e Pontualidade) */
+        .aviso-importante {
+            background-color: #fdfaf6;
+            border-left: 4px solid #c4a796;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+            text-align: left;
+            font-size: 1.05rem;
+            line-height: 1.5;
+        }
+        
+        .aviso-importante p {
+            font-size: 1.05rem;
+            margin: 10px 0;
+        }
+
+        .btn-gps {
+            display: inline-block;
+            background-color: #c4a796;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: 0.3s;
+            font-weight: 600;
+        }
+        
+        .btn-gps:hover {
+            background-color: #a88a78;
         }
 
         /* Área de Busca da Mesa */
         .busca-mesa-container {
             background-color: #fcf9f5;
-            border: 1px solid #c4a796;
+            border: 1px dashed #c4a796;
             padding: 20px;
             border-radius: 10px;
             margin-top: 25px;
@@ -113,7 +147,7 @@
             border-left: 4px solid #c4a796;
         }
 
-        /* Seção do PIX Enfatizada */
+        /* Seção do PIX */
         .presentes {
             background-color: #fcf9f5;
             border: 2px dashed #c4a796;
@@ -181,7 +215,7 @@
         
         <div class="intro">
             <p>Estamos muito felizes e contando os dias para celebrar esse momento tão especial com vocês. A presença de cada um é o que realmente fará esse dia inesquecível!</p>
-            <p>Ficamos muito felizes com a sua confirmação para o nosso café colonial. Aproveitamos para disponibilizar todas as informações do nosso grande dia:</p>
+            <p>Aproveitamos para disponibilizar aqui todas as informações do nosso grande dia para consulta:</p>
         </div>
 
         <div class="detalhes">
@@ -190,8 +224,15 @@
             <p>📍 <strong>LOCAL:</strong> Chácara Evíssima<br>
                Rua Irmã Jacobina, 600 – Almirante Tamandaré/PR</p>
             
+            <a href="https://maps.app.goo.gl/9tG5xPZwZQXzXn1u6" target="_blank" class="btn-gps">📍 Abrir no GPS (Google Maps)</a>
+            
+            <div class="aviso-importante">
+                <p>⏰ <strong>Pontualidade:</strong> Pedimos a gentileza de chegarem pontualmente para que possamos seguir a nossa programação. 🤍</p>
+                <p>📝 <strong>Sobre o Local:</strong> Na chegada, cada convidado receberá uma comanda. Na saída, basta informar na recepção que participou do casamento de Jessica e Mateus para que seja feita a isenção da comanda.</p>
+            </div>
+
             <div class="busca-mesa-container">
-                <p><strong>🪑 Descubra a sua mesa:</strong></p>
+                <p><strong>🪑 Reservamos um lugar especial para você!</strong><br>Descubra o número da sua mesa:</p>
                 <input type="text" id="inputNome" class="input-busca" placeholder="Digite seu nome (ex: Mateus)">
                 <button class="btn-buscar" onclick="procurarMesa()">Procurar</button>
                 <div id="resultadoMesa"></div>
@@ -211,7 +252,7 @@
             <a href="https://link.mercadopago.com.br/mateusjessicaminiwed" target="_blank" class="cartao-link">💳 Prefere usar o cartão? Clique aqui</a>
         </div>
 
-        <p>Nos vemos em breve!</p>
+        <p>Esperamos vocês! 🤍</p>
         <p class="assinatura">Com carinho,<br>Jéssica e Mateus.</p>
     </div>
 
@@ -289,9 +330,9 @@
                 let html = "";
                 matches.forEach(match => {
                     html += `<div class="mesa-destaque">
-                                <strong>${match.convidado}</strong>, seu lugar está na <strong>Mesa ${match.numeroMesa}</strong>!<br>
+                                😊 Olá, <strong>${match.convidado}</strong>! Sua mesa será a de número <strong>${match.numeroMesa}</strong>.<br>
                                 <span style="font-size: 0.9em; color: #7a5e4d; display: block; margin-top: 5px;">
-                                    <strong>Nesta mesa:</strong> ${match.companhias}
+                                    <strong>Com você:</strong> ${match.companhias}
                                 </span>
                              </div>`;
                 });
